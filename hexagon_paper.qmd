@@ -1,0 +1,39 @@
+---
+title: "Importance of spatial explicit landscape in disease spread models"
+subtitle: ""
+author:
+  - Mossa Merhi Reimert
+  - Lene Jung Kjær
+  - Anette Boklund
+  - Matthew Denwood
+bibliography: library.bib
+format:
+  html: default
+  pdf:
+    include-in-header: |
+      \usepackage{fullpage}
+    colorlinks: true
+    number-sections: false
+    papersize: a4paper
+    # keep-md: true
+    # keep-tex: true
+---
+
+## Outline
+
+* ASF is self-sustaining in the wild boar population [@taylor_predicting_2019]
+
+* Results involving using
+
+
+## Abstract
+
+## Introduction
+
+## Methods
+## Results
+## Discussion
+## References
+
+::: {#refs}
+:::
