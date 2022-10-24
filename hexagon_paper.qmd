@@ -11,14 +11,17 @@ monofont: "Fira Code"
 format:
   html: default
   pdf:
-    include-in-header: |
-      \usepackage{fullpage}
+    include-in-header:
+      text: |
+        \usepackage{fullpage}
     colorlinks: true
     number-sections: false
     papersize: a4paper
-    # keep-md: true
-    # keep-tex: true
+    keep-md: true
+    keep-tex: true
 ---
+
+# Spatial variance of carrying capacity in a host-pathogen setting
 
 ## Outline
 
