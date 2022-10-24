@@ -7,6 +7,7 @@ author:
   - Anette Boklund
   - Matthew Denwood
 bibliography: library.bib
+monofont: "Fira Code"
 format:
   html: default
   pdf:
@@ -21,18 +22,81 @@ format:
 
 ## Outline
 
-* ASF is self-sustaining in the wild boar population [@taylor_predicting_2019]
+* African Swine Fever (ASF) is self-sustaining in the wild boar
+  population [@taylor_predicting_2019]
+  and thus there are growing interest in modelling the spill-over events onto
+  the domestic pig farms.
 
-* Results involving using
+* Discritising a landscape into a regular grid or even a lattice is often considered
+  when studying ecological systems, that involve assimilating different resolution
+  sources together. Rectangular grids are often used, even in cases where
+  hexagonal grids might be more suited. In [@birch_rectangular_2007-1] it is highlighted
+  that hexagon grids are better when nearest neighbourhood, connectivity and movement
+  paths are important.
 
+  Equilateral triangular lattices (or hexagonal lattice) are not ill-fit for
+  population-based mathematical models. In [@hamilton_hexagonal_2013] it is shown
+  that they can compete with a rectilinear grids. 
+  (Wave equation `~=` population-based mathematical models)
+
+* [??] Why not triangles? To tesseletate triangles on a surface, you need both
+  triangles that point north, and down; Hexagons don't, either pointy-top or flat topped [@noauthor_red_nodate].
+
+* [??] Nested sampling schemes easier done with hexagons [@jurasinski_spatial_2006].
+
+* Carrying capacity (CC) drives the dynamics of the wildlife population [@iijima_spatial_2016],
+  and the locally spatial variation of carrying capacity influences the
+  reproduction and survival of wildlife [@saether_geographical_2008].
+
+  In [@scherer_moving_2020] spatial variation of CC is examined, together with
+  the type of dispersal and the effect of these on the outbreak measures.
+
+* Current approaches to carrying capacity in modelling ASF/CSF in wild boar uses
+  randomised carrying capacity, which breaks down any spatial hetereogenity,
+  that exist in the real world.
+
+  In this paper we consider the carrying capacity as a function of Corine
+  Landuse data, as an example of spatial hetetreogenic preserving strategy.
+  Equivalently, for a random counterpart, the same grid is used, but the locations
+  of these carrying capacities will be shuffled.
+
+* Current approaches for attributing breeding capacity to grid cells uses an
+  estimated wild boar density [@pittiglio_wild_2018-1] and [@jedrzejewska_factors_1997]
+  is done in [@lange_elucidating_2017-1]. They do suggest combining Corine Landuse
+  as a way to reverse back to a density dependence, but this is not done.
+
+  For Denmark, there are very little area in which wild boar have been present,
+  and thus defining a proxy to habitat quality is necessary. In [@halasa_simulation_2019]
+  breeding capacity is assigned according to a PERT distribution on cells that
+  satisfy a habitat threshold. 
+
+* There are many approaches to generate a mesh of a landscape. Most aim for
+  tractable properties when used in contiunuous/mathematical models;
+  For simulation-based models, this is not required, thus a discretisation of
+  a landscape may be built with other criteria. In this paper we explore (???) ways:
+  (@hexagon_patches) Every cell represents an atomic grouping of wild boars; A wild boar group with
+  a matriac and the cell is the center of their home-range [see @leaper_feasibility_1999 for home-range size]
+  (@voronoi_patches) Every cell is attributed to a pig farm, and the area signifies the area
+  in which present wild boar groups may infect (or vice versa) a pig farm.
+  
+  In (@hexagon_patches) we use hexagon mesh, where for (@voronoi_patches)
+  the mesh is generated through Dirichlet / Voronoi tesselation.
+  
+  Voronoi tesselation may also be used to aggregate areal-based predictors
+  in an analysis through Thiessen method, see [@jurado_why_2018].
+  In [@lunn_counterintuitive_2022] they do use Dirichlet tesselation a scaling
+  between a host-pathogen coverage.
 
 ## Abstract
 
 ## Introduction
 
 ## Methods
+
 ## Results
+
 ## Discussion
+
 ## References
 
 ::: {#refs}
