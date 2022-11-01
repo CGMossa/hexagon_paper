@@ -6,7 +6,7 @@ author:
   - Lene Jung Kjær
   - Anette Boklund
   - Matthew Denwood
-bibliography: library.bib
+bibliography: "library.bib"
 monofont: "Fira Code"
 format:
   html:
@@ -27,12 +27,19 @@ format:
 
 ## Outline
 
+1. Question: Spill-over events from wild boar population (host species) to domestic pig farms (target species).
+2. Define region-of-exposure for each farm: (i) nearby wild boar patches;
+  (ii) Dirichlet / voronoi tessellation of the wild boar
+3. 
+
+## Notes
+
 * African Swine Fever (ASF) is self-sustaining in the wild boar
   population [@taylor_predicting_2019]
   and thus there are growing interest in modelling the spill-over events onto
   the domestic pig farms.
 
-* Discritising a landscape into a regular grid or even a lattice is often considered
+* Discretizing a landscape into a regular grid or even a lattice is often considered
   when studying ecological systems, that involve assimilating different resolution
   sources together. Rectangular grids are often used, even in cases where
   hexagonal grids might be more suited. In [@birch_rectangular_2007-1] it is highlighted
@@ -41,13 +48,13 @@ format:
 
   Equilateral triangular lattices (or hexagonal lattice) are not ill-fit for
   population-based mathematical models. In [@hamilton_hexagonal_2013] it is shown
-  that they can compete with a rectilinear grids. 
+  that they can compete with a rectilinear grid. 
   (Wave equation `~=` population-based mathematical models)
 
-* [??] Why not triangles? To tesseletate triangles on a surface, you need both
+* [??] Why not triangles? To tessellate triangles on a surface, you need both
   triangles that point north, and down; Hexagons don't, either pointy-top or flat topped [@noauthor_red_nodate].
 
-* [??] Nested sampling schemes easier done with hexagons [@jurasinski_spatial_2006].
+* [??] Nested sampling schemes, easier done with hexagons [@jurasinski_spatial_2006].
 
 * Carrying capacity (CC) drives the dynamics of the wildlife population [@iijima_spatial_2016],
   and the locally spatial variation of carrying capacity influences the
@@ -57,11 +64,11 @@ format:
   the type of dispersal and the effect of these on the outbreak measures.
 
 * Current approaches to carrying capacity in modelling ASF/CSF in wild boar uses
-  randomised carrying capacity, which breaks down any spatial hetereogenity,
+  randomised carrying capacity, which breaks down any spatial heterogeneity,
   that exist in the real world.
 
-  In this paper we consider the carrying capacity as a function of Corine
-  Landuse data, as an example of spatial hetetreogenic preserving strategy.
+  In this paper, we consider the carrying capacity as a function of Corine
+  Landuse data, as an example of spatial heterogenic preserving strategy.
   Equivalently, for a random counterpart, the same grid is used, but the locations
   of these carrying capacities will be shuffled.
 
@@ -76,31 +83,53 @@ format:
   satisfy a habitat threshold. 
 
 * There are many approaches to generate a mesh of a landscape. Most aim for
-  tractable properties when used in contiunuous/mathematical models;
-  For simulation-based models, this is not required, thus a discretisation of
-  a landscape may be built with other criteria. In this paper we explore (???) ways:
+  tractable properties when used in continuous/mathematical models;
+  For simulation-based models, this is not required, thus a discretization of
+  a landscape may be built with other criteria. In this paper, we explore (???) ways:
   (@hexagon_patches) Every cell represents an atomic grouping of wild boars; A wild boar group with
-  a matriac and the cell is the center of their home-range [see @leaper_feasibility_1999 for home-range size]
+  a matriarch and the cell are the centre of their home-range [see @leaper_feasibility_1999 for home-range size]
   (@voronoi_patches) Every cell is attributed to a pig farm, and the area signifies the area
-  in which present wild boar groups may infect (or vice versa) a pig farm.
-  
+  in which present, wild boar groups may infect (or vice versa) a pig farm.
+    
   In (@hexagon_patches) we use hexagon mesh, where for (@voronoi_patches)
-  the mesh is generated through Dirichlet / Voronoi tesselation.
-  
-  Voronoi tesselation may also be used to aggregate areal-based predictors
-  in an analysis through Thiessen method, see [@jurado_why_2018].
-  In [@lunn_counterintuitive_2022] they do use Dirichlet tesselation a scaling
+  the mesh is generated through Dirichlet / Voronoi tessellation.
+    
+  Voronoi tessellation may also be used to aggregate areal-based predictors
+  in an analysis through thiessen method, see [@jurado_why_2018].
+  In [@lunn_counterintuitive_2022] they do use Dirichlet tessellation a scaling
   between a host-pathogen coverage.
 
 ## Abstract
 
 ## Introduction
 
-## Methods
+## Materials and methods
+
+CORINE Land Cover (CLC) is aggregated [@INSPIRE2013] using the `R`-package 
+`HexScape` [@denwood_m_hexscape_2021], and Shapefile consisting of hexagon mesh
+that is aligned with CLC. Similarly, the voronoi tessellation of the same
+area of interest is generated using 
+[@pebesma_simple_2018], which is backed by [@geos_contributors_geos_2021].
+
+(@hexagon_model) An individual-based model of wild boars, that encompasses
+  birth, death, and migration; Disease state is driven by groups, which are synonymous
+(@voronoi_model) Compartmental model that is parametrized by a disease-free
+model runs of (@hexagon_model).
+
+The spill-over events in (@hexagon_model) will have varying neighbouring patches
+that are included in the risk probablity, but in (@voronoi_model) the spill-over
+risk will only depend on particular polygon that a farm is located in.
+
+For both models (@hexagon_model) and (@voronoi_model) we will have the carring
+capacity either depending on the landuse, or random shuffling of their location.
+
 
 ## Results
 
+
 ## Discussion
+
+## Conclusion
 
 ## References
 
