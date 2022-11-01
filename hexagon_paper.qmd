@@ -9,7 +9,9 @@ author:
 bibliography: library.bib
 monofont: "Fira Code"
 format:
-  html: default
+  html:
+    self-contained: true
+    self-contained-math: true
   pdf:
     include-in-header:
       text: |

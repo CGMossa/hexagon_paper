@@ -1,6 +1,6 @@
 project:
   title: "hexagon_paper"
-  type: website
+  # type: website
   output-dir: docs
 
 
