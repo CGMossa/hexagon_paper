@@ -87,7 +87,7 @@ format:
   For simulation-based models, this is not required, thus a discretization of
   a landscape may be built with other criteria. In this paper, we explore (???) ways:
   (@hexagon_patches) Every cell represents an atomic grouping of wild boars; A wild boar group with
-  a matriarch and the cell are the centre of their home-range [see @leaper_feasibility_1999 for home-range size]
+  a matriarch and the cell are the center of their home-range [see @leaper_feasibility_1999 for home-range size]
   (@voronoi_patches) Every cell is attributed to a pig farm, and the area signifies the area
   in which present, wild boar groups may infect (or vice versa) a pig farm.
     
@@ -103,6 +103,8 @@ format:
 
 ## Introduction
 
+
+
 ## Materials and methods
 
 CORINE Land Cover (CLC) is aggregated [@INSPIRE2013] using the `R`-package 
@@ -117,10 +119,10 @@ area of interest is generated using
 model runs of (@hexagon_model).
 
 The spill-over events in (@hexagon_model) will have varying neighbouring patches
-that are included in the risk probablity, but in (@voronoi_model) the spill-over
+that are included in the risk probability, but in (@voronoi_model) the spill-over
 risk will only depend on particular polygon that a farm is located in.
 
-For both models (@hexagon_model) and (@voronoi_model) we will have the carring
+For both models (@hexagon_model) and (@voronoi_model) we will have the carrying
 capacity either depending on the landuse, or random shuffling of their location.
 
 
